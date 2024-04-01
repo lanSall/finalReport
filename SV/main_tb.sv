@@ -1,18 +1,17 @@
 `timescale 1ns / 1ps
 module stimulus ();
     logic  clk;
-
     logic  reset;
    
     logic  [63:0] seed = 64'h0412_6424_0034_3C28;
-    logic         randomize;
-    logic         play;
-    logic  [63:0] grid;
-    logic  [63:0] next_grid;
+    //logic  [63:0] outputSeed;
+    //logic         randomize;
+    logic          start;
+    logic  [63:0] grid, next_grid;
 
-    //FSM dut0(clk, reset, start, randomize, seed);
-    datapath dut1(seed, grid);
-    //flop #(64) dut2(clk, grid, next_grid);
+    //FSM dut0(clk, reset, start, randomize, grid, outputSeed);
+    flopenr #(64) dut1(clk, reset, start, seed, next_grid, grid);
+    datapath dut2(grid, next_grid);
 
     integer handle3;
     integer desc3;
@@ -35,20 +34,18 @@ module stimulus ();
    always 
      begin
 	desc3 = handle3;
-	#10 $fdisplay(desc3, "%b || %b \n%b || %b \n%b || %b \n%b || %b \n%b || %b \n%b || %b \n%b || %b \n%b || %b \n--------------------" , 
-		     seed[7:0], grid[7:0], seed[15:8], grid[15:8], seed[23:16], grid[23:16], seed[31:24], grid[31:24],seed[39:32], grid[39:32],seed[47:40], grid[47:40],seed[55:48], grid[55:48],seed[63:56], grid[63:56],);
+	#10 $fdisplay(desc3, "  GRID      NEXT_GRID\n%b || %b \n%b || %b \n%b || %b \n%b || %b \n%b || %b \n%b || %b \n%b || %b \n%b || %b \n--------------------" , 
+		     grid[7:0], next_grid[7:0], grid[15:8], next_grid[15:8], grid[23:16], next_grid[23:16], grid[31:24], next_grid[31:24], grid[39:32], next_grid[39:32],grid[47:40], next_grid[47:40],grid[55:48], next_grid[55:48],grid[63:56], next_grid[63:56],);
      end   
 
     initial 
      begin      
-        #0 seed = seed;
-        #10 next_grid = grid;
-        #0 seed = next_grid;
-        #10 next_grid = grid;
-        #0 seed = next_grid;
-        #10 next_grid = grid;
-        #0 seed = next_grid;
-        #10 next_grid = grid;
+       #0 reset <=1'b1;
+       #10 reset <= 1'b0;
+       //#0 grid <= 64'h0412_6424_0034_3C28;
+       #0 start <= 1'b1;
+       #500 start <= 1'b0;
        
+
      end
 endmodule

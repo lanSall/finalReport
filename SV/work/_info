@@ -9,17 +9,17 @@ z2
 cModel Technology
 Z0 dC:/Users/lance/OneDrive/VScode/SV/finalReport/finalReport/SV
 T_opt
-!s110 1711995888
-V[?iNPk3:]Id[ScI[YoEXQ1
+Z1 !s110 1712004756
+VKR007i@I[S3VAeaiF25Um1
 04 8 4 work stimulus fast 0
-=1-f0d415fc1697-660afbef-373-c60
+=1-f0d415fc1697-660b1e94-28c-25c0
 o-quiet -auto_acc_if_foreign -work work +acc
-Z1 tCvgOpt 0
+Z2 tCvgOpt 0
 n@_opt
 OL;O;10.7f;67
 vdatapath
-Z2 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-Z3 !s110 1711995887
+Z3 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
+R1
 !i10b 1
 !s100 6MNg`U=Xa:Yg5>0>9Jj`:3
 I1XdVSVRcA?R=[KQ3KggBX0
@@ -35,15 +35,15 @@ Z9 OL;L;10.7f;67
 r1
 !s85 0
 31
-Z10 !s108 1711995887.000000
-Z11 !s107 datapath.sv|main_tb.sv|main.sv|
-Z12 !s90 main.sv|main_tb.sv|datapath.sv|
+Z10 !s108 1712004756.000000
+Z11 !s107 flopenr.sv|datapath.sv|main_tb.sv|main.sv|
+Z12 !s90 main.sv|main_tb.sv|datapath.sv|flopenr.sv|
 !i113 0
 Z13 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
-vevolve3
 R2
+vevolve3
 R3
+R1
 !i10b 1
 !s100 M8H>MU=QlkcTIRlz_:kVn3
 IK[Q34>L2P3]6SBQ]<5J=h0
@@ -64,10 +64,10 @@ R11
 R12
 !i113 0
 R13
-R1
-vevolve5
 R2
+vevolve5
 R3
+R1
 !i10b 1
 !s100 ljkWX2k_NI>?[JZVoIki10
 I6YeJ>J=6[Q`@DaP=@C<?V1
@@ -88,10 +88,10 @@ R11
 R12
 !i113 0
 R13
-R1
-vevolve8
 R2
+vevolve8
 R3
+R1
 !i10b 1
 !s100 9Z2ck1[Z]?E^IGXYQZDY92
 I4LmU[TQ_J7`HWbX0X1hcN2
@@ -112,10 +112,34 @@ R11
 R12
 !i113 0
 R13
-R1
-vFSM
 R2
+vflopenr
 R3
+R1
+!i10b 1
+!s100 Q5>n:eRYg`_e<O6d]6ieb0
+I;>mG`^SJPzU^2O;Q:HjCP2
+R4
+!s105 flopenr_sv_unit
+S1
+R0
+w1712004652
+8flopenr.sv
+Fflopenr.sv
+L0 27
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+vFSM
+R3
+R1
 !i10b 1
 !s100 :<dSL2i71_ZXg1@VPIYXF2
 IhSk[:WkD7[NdK[B=LVmV^3
@@ -123,7 +147,7 @@ R4
 !s105 main_sv_unit
 S1
 R0
-w1711994115
+w1711995928
 8main.sv
 Fmain.sv
 L0 1
@@ -136,11 +160,11 @@ R11
 R12
 !i113 0
 R13
-R1
+R2
 n@f@s@m
 vrules
-R2
 R3
+R1
 !i10b 1
 !s100 UQRQ5K7nfo61[Ym_X<4MK2
 IP2WWKHe_AAZm]^jW9FQ1z2
@@ -161,18 +185,18 @@ R11
 R12
 !i113 0
 R13
-R1
-vstimulus
 R2
+vstimulus
 R3
+R1
 !i10b 1
-!s100 ;1HEkFGjF9fC7V]B>SSi`0
-I<lWfl[mD2MjQSdo:Wf0U43
+!s100 @h<36LZoYYDVD0;_0aB`c3
+I9`Tj[CRTejC5MGNH6N^Pi2
 R4
 !s105 main_tb_sv_unit
 S1
 R0
-w1711995885
+w1712004754
 8main_tb.sv
 Fmain_tb.sv
 L0 2
@@ -185,4 +209,4 @@ R11
 R12
 !i113 0
 R13
-R1
+R2
