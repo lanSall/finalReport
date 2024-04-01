@@ -1,12 +1,13 @@
-module FSM (clk, reset, start, randomize, seed):
+module FSM (clk, reset, start, randomize, seed);
     input logic clk;
     input logic reset;
     input logic start;
     input logic randomize;
+    
 
     output logic [63:0] seed;
 
-    assign seed = 64'h0412_6424_0034_3C28;
+    //assign seed = 64'h0412_6424_0034_3C28;
 
     typedef enum 	logic [3:0] {IDLE, LFSR, play} statetype;
     statetype state, nextstate;
@@ -16,6 +17,29 @@ module FSM (clk, reset, start, randomize, seed):
      if (reset) state <= IDLE;
      else       state <= nextstate;
 
-     
+     always_comb
+      case (state)
+      IDLE: begin 
+        seed <= 64'h0412_6424_0034_3C28;
 
+        if(reset)           nextstate <= IDLE;
+        else if(randomize)  nextstate <= LFSR;
+        else                nextstate <= IDLE;
+      end
+      LFSR: begin
+        seed <= 64'h0412_6424_0034_3C28;
+
+        if(reset)           nextstate <= IDLE;
+        else if(randomize)  nextstate <= LFSR;
+        else if(start)      nextstate <= play;
+        else                nextstate <= LFSR;
+      end
+      play: begin
+        seed <= 64'h0412_6424_0034_3C28;
+
+        if(reset)           nextstate <= IDLE;
+        else if(randomize)  nextstate <= LFSR;
+        else                nextstate <= play;
+      end
+      endcase
 endmodule
