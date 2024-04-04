@@ -1,11 +1,12 @@
-module FSM (clk, reset, start, randomize, seed);
+module FSM (clk, reset, start, randomize, inputSeed, outputSeed);
     input logic clk;
     input logic reset;
     input logic start;
     input logic randomize;
+    input logic [63:0] inputSeed;
     
 
-    output logic [63:0] seed;
+    output logic [63:0] outputSeed;
 
     //assign seed = 64'h0412_6424_0034_3C28;
 

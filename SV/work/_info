@@ -9,204 +9,93 @@ z2
 cModel Technology
 Z0 dC:/Users/lance/OneDrive/VScode/SV/finalReport/finalReport/SV
 T_opt
-Z1 !s110 1712004756
-VKR007i@I[S3VAeaiF25Um1
-04 8 4 work stimulus fast 0
-=1-f0d415fc1697-660b1e94-28c-25c0
-o-quiet -auto_acc_if_foreign -work work +acc
-Z2 tCvgOpt 0
+!s110 1712177814
+VbXRT0TaW7QTCNNf]2o8ml2
+Z1 04 8 4 work stimulus fast 0
+=1-f0d415fc1697-660dc296-26a-7774
+Z2 o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
 n@_opt
-OL;O;10.7f;67
-vdatapath
-Z3 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-R1
-!i10b 1
-!s100 6MNg`U=Xa:Yg5>0>9Jj`:3
-I1XdVSVRcA?R=[KQ3KggBX0
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 !s105 datapath_sv_unit
-S1
+Z4 OL;O;10.7f;67
 R0
-Z6 w1711989322
-Z7 8datapath.sv
-Z8 Fdatapath.sv
-L0 7
-Z9 OL;L;10.7f;67
-r1
-!s85 0
-31
-Z10 !s108 1712004756.000000
-Z11 !s107 flopenr.sv|datapath.sv|main_tb.sv|main.sv|
-Z12 !s90 main.sv|main_tb.sv|datapath.sv|flopenr.sv|
-!i113 0
-Z13 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+T_opt1
+!s110 1712177834
+VCjl;W1TZ]hfgIMYX0zW8e1
+R1
+=1-f0d415fc1697-660dc2a9-3d5-4fa8
 R2
-vevolve3
 R3
-R1
-!i10b 1
-!s100 M8H>MU=QlkcTIRlz_:kVn3
-IK[Q34>L2P3]6SBQ]<5J=h0
+n@_opt1
 R4
-R5
+vflop
+Z5 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
+Z6 !s110 1712177833
+!i10b 1
+!s100 Z8Z`_0Pg@;2I3Ad>6BH2a2
+IAOf=<k[ceE:=5U;LHACHD3
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+!s105 flop_sv_unit
 S1
 R0
-R6
-R7
-R8
-L0 88
-R9
-r1
-!s85 0
-31
-R10
-R11
-R12
-!i113 0
-R13
-R2
-vevolve5
-R3
-R1
-!i10b 1
-!s100 ljkWX2k_NI>?[JZVoIki10
-I6YeJ>J=6[Q`@DaP=@C<?V1
-R4
-R5
-S1
-R0
-R6
-R7
-R8
-L0 103
-R9
-r1
-!s85 0
-31
-R10
-R11
-R12
-!i113 0
-R13
-R2
-vevolve8
-R3
-R1
-!i10b 1
-!s100 9Z2ck1[Z]?E^IGXYQZDY92
-I4LmU[TQ_J7`HWbX0X1hcN2
-R4
-R5
-S1
-R0
-R6
-R7
-R8
-L0 122
-R9
-r1
-!s85 0
-31
-R10
-R11
-R12
-!i113 0
-R13
-R2
-vflopenr
-R3
-R1
-!i10b 1
-!s100 Q5>n:eRYg`_e<O6d]6ieb0
-I;>mG`^SJPzU^2O;Q:HjCP2
-R4
-!s105 flopenr_sv_unit
-S1
-R0
-w1712004652
-8flopenr.sv
-Fflopenr.sv
+w1711995929
+8flop.sv
+Fflop.sv
 L0 27
-R9
+Z8 OL;L;10.7f;67
 r1
 !s85 0
 31
-R10
-R11
-R12
+Z9 !s108 1712177833.000000
+Z10 !s107 flop.sv|lfsr_tb.sv|lfsr.sv|
+Z11 !s90 lfsr.sv|lfsr_tb.sv|flop.sv|
 !i113 0
-R13
-R2
-vFSM
+Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R3
-R1
-!i10b 1
-!s100 :<dSL2i71_ZXg1@VPIYXF2
-IhSk[:WkD7[NdK[B=LVmV^3
-R4
-!s105 main_sv_unit
-S1
-R0
-w1711995928
-8main.sv
-Fmain.sv
-L0 1
-R9
-r1
-!s85 0
-31
-R10
-R11
-R12
-!i113 0
-R13
-R2
-n@f@s@m
-vrules
-R3
-R1
-!i10b 1
-!s100 UQRQ5K7nfo61[Ym_X<4MK2
-IP2WWKHe_AAZm]^jW9FQ1z2
-R4
+vlfsr
 R5
-S1
-R0
 R6
-R7
-R8
-L0 147
-R9
-r1
-!s85 0
-31
-R10
-R11
-R12
-!i113 0
-R13
-R2
-vstimulus
-R3
-R1
 !i10b 1
-!s100 @h<36LZoYYDVD0;_0aB`c3
-I9`Tj[CRTejC5MGNH6N^Pi2
-R4
-!s105 main_tb_sv_unit
+!s100 G;?jz5U>kQ9Q@QiX`?25m1
+I8gj>NkVeJ>6>lAl_OcKZ:2
+R7
+!s105 lfsr_sv_unit
 S1
 R0
-w1712004754
-8main_tb.sv
-Fmain_tb.sv
-L0 2
-R9
+w1712176653
+8lfsr.sv
+Flfsr.sv
+L0 1
+R8
 r1
 !s85 0
 31
+R9
 R10
 R11
-R12
 !i113 0
-R13
-R2
+R12
+R3
+vstimulus
+R5
+R6
+!i10b 1
+!s100 ]TPE2?8Rozg8b=k[h5F;02
+IBHCfm1Bf5Jn2OXh23>aeJ1
+R7
+!s105 lfsr_tb_sv_unit
+S1
+R0
+w1712177810
+8lfsr_tb.sv
+Flfsr_tb.sv
+L0 2
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R3

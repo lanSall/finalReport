@@ -1,58 +1,66 @@
-// testbench to prove maximal LFSR
-module tb ();
+`timescale 1ns / 1ps
+module stimulus ();
 
-   //logic variables to route input and output to DUT
+    // Logic variables to route input and output to DUT
     logic clk;
     logic reset;
-    logic [15:0] seed;
-    
+    logic [15:0] seed = 16'h01ab;
+    logic [15:0] seedInput;
+    logic [15:0] nextSeedInput;
 
-   //create file handles to write results to a file
-   
-   // instantiate device under test (small LFSR)
-    lfsr dut(seed, clk, reset, seed);
-   //set up a clock signal
-   always     
-     begin
-	clk = 1; #1; clk = 0; #1;
-     end
-   
-   integer handle3;
+    // File handles for writing results
+    integer handle3;
     integer desc3;
 
-      initial
-     begin
-	// Gives output file name
-	handle3 = $fopen("lfsr.out");
-	// Tells when to finish simulation
-	#1000 $finish;		
-     end
+    // Instantiate the device under test (LFSR)
+    lfsr dut1(clk, reset,nextSeedInput, seedInput);
+    flop #(16) dut2(clk, seedInput, nextSeedInput);
 
-   always 
-     begin
-	desc3 = handle3;
-	#10 $fdisplay(desc3, "%b /n%b /n%b /n%b", seed[3:0], seed[7:4], seed[11:8], seed[15:12]
-		     );
-     end   
-	//set up output file
-	//set up any book keeping variables you may want to use
-	//set up a starting seed.  What happens with all 0s?
-	//reset your DUT
-	//save the initial output of your DUT to compare with current output
-	//and see whenb you repeat
-     
+    // Clock signal generation
+    always begin
+        clk = 1; #1; clk = 0; #1;
+    end
 
-   always @(posedge clk)
-   // check results on falling edge of clk
-   always @(negedge clk) begin
-		if(~reset) begin
-      
-		//check if your output equals the initial output 
-		//if so, report how many iterations it took to repeat
-		//this should be (2^n) - 1
-		//if the output never repeats for 2^n iterations, report that
-		end
-	end
-   
-endmodule // tb
+    // Initial block
+    initial begin
+        // Open output file
+        handle3 = $fopen("lfsr.out");
+
+        // Initialize seed and reset
+        nextSeedInput <= seed;
+
+    end
+
+    always @(posedge clk) begin
+        // Write seed value to file for each clock cycle
+        $fwrite(handle3, "%h\n", seedInput);
+    end
+
+    // Check results on falling edge of clock
+    always @(negedge clk) begin
+        if (~reset) begin
+            // Check if output repeated
+            if (seed == seedInput) begin
+                integer iterations;
+                iterations = $time / 2; // Assuming clock period is 2
+                $display("Output repeated after %d iterations", iterations);
+                // Optionally stop simulation
+                // $stop;
+            end else begin
+                $display("Output did not repeat within 2^n iterations");
+            end
+        end
+    end
+
+    // Close file handles at the end of simulation
+    always @* begin
+        if (seed == seedInput) begin
+            $fclose(handle3);
+            $fclose(desc3);
+            $stop;
+        end
+    end
+
+endmodule // stimulus
+
 

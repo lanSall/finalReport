@@ -1,23 +1,19 @@
-# do main.do
+# do lfsr.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is lance@LANCESPC.
+# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim SE-64 vlog 10.7f Compiler 2020.03 Mar 24 2020
-# Start time: 15:52:36 on Apr 01,2024
-# vlog main.sv main_tb.sv datapath.sv flopenr.sv 
-# -- Compiling module FSM
+# Start time: 15:57:13 on Apr 03,2024
+# vlog lfsr.sv lfsr_tb.sv flop.sv 
+# -- Compiling module lfsr
 # -- Compiling module stimulus
-# -- Compiling module datapath
-# -- Compiling module evolve3
-# -- Compiling module evolve5
-# -- Compiling module evolve8
-# -- Compiling module rules
-# -- Compiling module flopenr
+# -- Compiling module flop
 # 
 # Top level modules:
-# 	FSM
 # 	stimulus
-# End time: 15:52:36 on Apr 01,2024, Elapsed time: 0:00:00
+# End time: 15:57:13 on Apr 03,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 15:52:36 on Apr 01,2024
+# Start time: 15:57:13 on Apr 03,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # //  ModelSim SE-64 10.7f Mar 24 2020
 # //
@@ -34,13 +30,16 @@
 # //
 # Loading sv_std.std
 # Loading work.stimulus(fast)
-# Loading work.flopenr(fast)
-# Loading work.datapath(fast)
-# Loading work.evolve3(fast)
-# Loading work.rules(fast)
-# Loading work.evolve5(fast)
-# Loading work.evolve8(fast)
+# Loading work.lfsr(fast)
+# Loading work.flop(fast)
+# ** Warning: (vsim-3839) Variable '/stimulus/nextSeedInput', driven via a port connection, is multiply driven. See lfsr_tb.sv(17).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus File: lfsr_tb.sv Line: 30
 # .list
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: lance  Hostname: LANCESPC  ProcessID: 30580
+#           Attempting to use alternate WLF file "./wlftefevyk".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftefevyk
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
@@ -49,7 +48,5 @@
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
-# ** Note: $finish    : main_tb.sv(31)
-#    Time: 1 us  Iteration: 0  Instance: /stimulus
-# End time: 15:52:37 on Apr 01,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
+# End time: 15:57:21 on Apr 03,2024, Elapsed time: 0:00:08
+# Errors: 0, Warnings: 3

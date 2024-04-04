@@ -3,13 +3,12 @@ module stimulus ();
     logic  clk;
     logic  reset;
    
-    logic  [63:0] seed = 64'h0412_6424_0034_3C28;
-    //logic  [63:0] outputSeed;
-    //logic         randomize;
-    logic          start;
+    logic  [63:0] seed;
+    logic         randomize;
+    logic         start;
     logic  [63:0] grid, next_grid;
 
-    //FSM dut0(clk, reset, start, randomize, grid, outputSeed);
+    FSM dut0(clk, reset, start, randomize, grid, seed);
     flopenr #(64) dut1(clk, reset, start, seed, next_grid, grid);
     datapath dut2(grid, next_grid);
 
@@ -42,7 +41,6 @@ module stimulus ();
      begin      
        #0 reset <=1'b1;
        #10 reset <= 1'b0;
-       //#0 grid <= 64'h0412_6424_0034_3C28;
        #0 start <= 1'b1;
        #500 start <= 1'b0;
        
