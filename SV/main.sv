@@ -4,8 +4,6 @@ module FSM (clk, reset, start, randomize, inputSeed, outputSeed);
     input logic start;
     input logic randomize;
     input logic [63:0] inputSeed;
-    
-
     output logic [63:0] outputSeed;
 
     //assign seed = 64'h0412_6424_0034_3C28;
@@ -21,14 +19,14 @@ module FSM (clk, reset, start, randomize, inputSeed, outputSeed);
      always_comb
       case (state)
       IDLE: begin 
-        seed <= 64'h0412_6424_0034_3C28;
+        outputSeed = 64'h0412_6424_0034_3Ca8;
 
         if(reset)           nextstate <= IDLE;
         else if(randomize)  nextstate <= LFSR;
         else                nextstate <= IDLE;
       end
       LFSR: begin
-        seed <= 64'h0412_6424_0034_3C28;
+        outputSeed = 64'h0412_6424_0034_3C28;
 
         if(reset)           nextstate <= IDLE;
         else if(randomize)  nextstate <= LFSR;
@@ -36,7 +34,7 @@ module FSM (clk, reset, start, randomize, inputSeed, outputSeed);
         else                nextstate <= LFSR;
       end
       play: begin
-        seed <= 64'h0412_6424_0034_3C28;
+        outputSeed = 64'h0412_6424_0034_3C28;
 
         if(reset)           nextstate <= IDLE;
         else if(randomize)  nextstate <= LFSR;
