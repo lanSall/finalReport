@@ -27,7 +27,7 @@ module stimulus ();
         handle3 = $fopen("lfsr.out");
 
         // Initialize seed and reset
-        #0 seed = 16'h0;
+        #0 nextSeedInput <= 16'habcd;
         #0 reset =1'b1;
         #10 reset = 1'b0;
 
