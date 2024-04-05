@@ -4,7 +4,7 @@ module stimulus ();
     // Logic variables to route input and output to DUT
     logic clk;
     logic reset;
-    logic [15:0] seed = 16'h01ab;
+    logic [15:0] seed;
     logic [15:0] seedInput;
     logic [15:0] nextSeedInput;
 
@@ -27,7 +27,9 @@ module stimulus ();
         handle3 = $fopen("lfsr.out");
 
         // Initialize seed and reset
-        nextSeedInput <= seed;
+        #0 seed = 16'h0;
+        #0 reset =1'b1;
+        #10 reset = 1'b0;
 
     end
 

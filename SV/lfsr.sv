@@ -10,12 +10,12 @@ output logic [15:0] shift_seed;
 logic [14:0] temp;
 
 always_ff @(posedge clk)
-    //if (reset)  seed <= 16'b1001_0110_0101_1010;
-    //else 
+    if (reset)  shift_seed <= seed;
+    else 
     begin
-    temp = seed[14:0];
+    temp = shift_seed[14:0];
     shift_seed[15:1] <= temp;
-    shift_seed[0]    <= seed[15] ~^ seed[14] ~^ seed[12] ~^ seed[3]; 
+    shift_seed[0]    <= ~(shift_seed[15] ^ shift_seed[14] ^ shift_seed[12] ^ shift_seed[3]); 
     end
 
 
