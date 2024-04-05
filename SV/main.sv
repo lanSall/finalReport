@@ -21,23 +21,25 @@ module FSM (clk, reset, start, randomize, inputSeed, outputSeed);
       IDLE: begin 
         outputSeed = 64'h0412_6424_0034_3Ca8;
 
-        if(reset)           nextstate <= IDLE;
-        else if(randomize)  nextstate <= LFSR;
-        else                nextstate <= IDLE;
+        if(reset)                               nextstate <= IDLE;
+        else if(~randomize&&start&&~reset       nextstate <= play;
+        else if(randomize&&~start&&~reset)      nextstate <= LFSR;
+        else                                    nextstate <= IDLE;
       end
       LFSR: begin
+        LFSR dut(clk, reset, inputSeed, outputSeed);
         outputSeed = 64'h0412_6424_0034_3C28;
 
-        if(reset)           nextstate <= IDLE;
-        else if(randomize)  nextstate <= LFSR;
-        else if(start)      nextstate <= play;
-        else                nextstate <= LFSR;
+        if(reset)                               nextstate <= IDLE;
+        else if(randomize)                      nextstate <= LFSR;
+        else if(~randomize&&start&&~reset)      nextstate <= play;
+        else                                    nextstate <= LFSR;
       end
       play: begin
         outputSeed = 64'h0412_6424_0034_3C28;
 
         if(reset)           nextstate <= IDLE;
-        else if(randomize)  nextstate <= LFSR;
+        else if(randomize&&~reset)  nextstate <= LFSR;
         else                nextstate <= play;
       end
       endcase
