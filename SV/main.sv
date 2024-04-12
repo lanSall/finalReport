@@ -27,8 +27,6 @@ module FSM (clk, reset, start, randomize, inputSeed, outputSeed);
         else                                    nextstate <= IDLE;
       end
       LFSR: begin
-        LFSR dut(clk, reset, inputSeed, outputSeed);
-        outputSeed = 64'h0412_6424_0034_3C28;
 
         if(reset)                               nextstate <= IDLE;
         else if(randomize)                      nextstate <= LFSR;
