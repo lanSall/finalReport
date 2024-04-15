@@ -31,7 +31,7 @@ input logic reset;
 input logic clk;
 output logic [63:0] shift_seed;
 
-logic [14:0] temp;
+logic [62:0] temp;
 
 always_ff @(posedge clk)
     if (reset)  shift_seed <= seed;

@@ -37,9 +37,17 @@ view wave
 
 -- display input and output signals as hexidecimal values
 # Diplays All Signals recursively
- add wave -hex -r /stimulus/*
-#add wave -noupdate -divider -height 32 "FSM"
-#add wave -hex /stimulus/dut/y
+#add wave -hex -r /stimulus/*
+add wave -noupdate -divider -height 32 "stimulus"
+add wave -hex /stimulus/*
+add wave -hex /stimulus/dut/dut1/state
+add wave -noupdate -divider -height 32 "stimulus"
+add wave -hex /stimulus/dut/*
+add wave -noupdate -divider -height 32 "lfsr"
+add wave -hex /stimulus/dut/dut4/*
+add wave -noupdate -divider -height 32 "flop"
+add wave -hex /stimulus/dut/dut2/*
+
 #add wave -hex /stimulus/dut/reset
 #add wave -hex /stimulus/dut/clk
 #add wave -hex /stimulus/dut/left

@@ -29,10 +29,10 @@ n@_opt1
 R4
 R0
 T_opt2
-Z5 !s110 1713198744
-V3<ZjRNN?0_d5<bSoX?G^J3
+Z5 !s110 1713204510
+VS_Q0E:m`?Q=3?lK:6kk3z1
 R1
-=1-f0d415fc1697-661d5698-155-3a90
+=1-f0d415fc1697-661d6d1e-353-3fa0
 R2
 R3
 n@_opt2
@@ -55,9 +55,9 @@ Z12 OL;L;10.7f;67
 r1
 !s85 0
 31
-Z13 !s108 1713198743.000000
+Z13 !s108 1713204510.000000
 Z14 !s107 lfsr.sv|main_tb.sv|flopenr.sv|datapath.sv|main.sv|FSM.sv|
-Z15 !s90 FSM.sv|main.sv|datapath.sv|flopenr.sv|main_tb.sv|lfsr.sv|
+Z15 !s90 -reportprogress|300|FSM.sv|main.sv|datapath.sv|flopenr.sv|main_tb.sv|lfsr.sv|
 !i113 0
 Z16 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R3
@@ -161,13 +161,13 @@ vFSM
 R6
 R5
 !i10b 1
-!s100 dDamULNA5:2nWH3SRH:ha3
-Ik5;liMZ9:PYAYHl8G?M@[0
+!s100 nZ@^CbH914NIh8oQ2KO:;0
+I5Na0^Xo1hQGcW1zXf]VB73
 R7
 !s105 FSM_sv_unit
 S1
 R0
-w1712943518
+w1713203740
 8FSM.sv
 FFSM.sv
 L0 1
@@ -186,13 +186,13 @@ vlfsr64
 R6
 R5
 !i10b 1
-!s100 >N4`S?@OATQVJizBTm:ZK1
-I6;:9LCE9>8DgFV6F?Z>dJ1
+!s100 09ITfdK2m?1h2Vn@j<`E^2
+IFR@mn8Y]2<82mEUHkYV3I2
 R7
 !s105 lfsr_sv_unit
 S1
 R0
-w1712940435
+w1713200928
 8lfsr.sv
 Flfsr.sv
 L0 28
@@ -210,13 +210,13 @@ vmain
 R6
 R5
 !i10b 1
-!s100 ^93U>L;YP2:5j_:P^Eb0J3
-Ik[YbTYd1jmN04[SSSD5Ch2
+!s100 CJb?[<?;OK03_jh22IzXI2
+Ig5fZ:F=G<L3Ijf]F1=2@D1
 R7
 !s105 main_sv_unit
 S1
 R0
-w1713198739
+w1713204499
 8main.sv
 Fmain.sv
 L0 1
@@ -258,13 +258,13 @@ vstimulus
 R6
 R5
 !i10b 1
-!s100 ^f6H?OFICULV:I=3H3F@S0
-I?znCec[gXZG=U581SDBIZ3
+!s100 9bj[o2EABJjUKUFI1ZA5W3
+I<Hn>Oi7]YKbz3>3I^gC8a2
 R7
 !s105 main_tb_sv_unit
 S1
 R0
-w1713198601
+w1713204177
 8main_tb.sv
 Fmain_tb.sv
 L0 2

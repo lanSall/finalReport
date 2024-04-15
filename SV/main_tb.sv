@@ -36,8 +36,11 @@ module stimulus ();
     initial 
      begin      
         #0 randomize <= 1'b0;
-       #10 reset <=1'b1;
-       #10 reset <= 1'b0;
+        #0 start <= 1'b0;
+       #0 reset <=1'b1;
+       #20 reset <= 1'b0;
+       #0 randomize <= 1'b1;
+       #100 randomize <= 1'b0;
        #0 start <= 1'b1;
        #500 start <= 1'b0;
        

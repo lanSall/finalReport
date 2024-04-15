@@ -27,7 +27,7 @@ module FSM (clk, reset, start, randomize, rst, strt, rnd);
         rnd = 1'b0;
 
         if(reset)                               nextstate <= IDLE;
-        else if(~randomize&&start&&~reset)       nextstate <= play;
+        else if(~randomize&&start&&~reset)      nextstate <= play;
         else if(randomize&&~start&&~reset)      nextstate <= LFSR;
         else                                    nextstate <= IDLE;
       end
@@ -38,7 +38,7 @@ module FSM (clk, reset, start, randomize, rst, strt, rnd);
 
 
         if(reset)                               nextstate <= IDLE;
-        else if(randomize)                      nextstate <= LFSR;
+        else if(randomize&&~reset)              nextstate <= LFSR;
         else if(~randomize&&start&&~reset)      nextstate <= play;
         else                                    nextstate <= LFSR;
       end
@@ -47,9 +47,9 @@ module FSM (clk, reset, start, randomize, rst, strt, rnd);
         strt = 1'b1;
         rnd = 1'b0;
 
-        if(reset)           nextstate <= IDLE;
-        else if(randomize&&~reset)  nextstate <= LFSR;
-        else                nextstate <= play;
+        if(reset)                               nextstate <= IDLE;
+        else if(randomize&&~reset&&~start)      nextstate <= LFSR;
+        else                                    nextstate <= play;
       end
       endcase
 endmodule
