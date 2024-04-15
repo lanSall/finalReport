@@ -1,44 +1,21 @@
-module FSM (clk, reset, start, randomize, inputSeed, outputSeed);
+module main(clk, reset, start, randomize, grid);
     input logic clk;
     input logic reset;
     input logic start;
     input logic randomize;
-    input logic [63:0] inputSeed;
-    output logic [63:0] outputSeed;
 
-    //assign seed = 64'h0412_6424_0034_3C28;
+    logic rst;
+    logic strt;
+    logic rnd;
+    logic [63:0]set = 64'b1101101110010101101101101110010110101101101101110010101101101101;
+    logic [63:0]grid_evolve;
 
-    typedef enum 	logic [3:0] {IDLE, LFSR, play} statetype;
-    statetype state, nextstate;
-   
-   // state register
-   always_ff @(posedge clk, posedge reset)
-     if (reset) state <= IDLE;
-     else       state <= nextstate;
+    output logic [63:0] grid;
 
-     always_comb
-      case (state)
-      IDLE: begin 
-        outputSeed = 64'h0412_6424_0034_3Ca8;
+    //set is a mux for inputing our seeds
 
-        if(reset)                               nextstate <= IDLE;
-        else if(~randomize&&start&&~reset       nextstate <= play;
-        else if(randomize&&~start&&~reset)      nextstate <= LFSR;
-        else                                    nextstate <= IDLE;
-      end
-      LFSR: begin
-
-        if(reset)                               nextstate <= IDLE;
-        else if(randomize)                      nextstate <= LFSR;
-        else if(~randomize&&start&&~reset)      nextstate <= play;
-        else                                    nextstate <= LFSR;
-      end
-      play: begin
-        outputSeed = 64'h0412_6424_0034_3C28;
-
-        if(reset)           nextstate <= IDLE;
-        else if(randomize&&~reset)  nextstate <= LFSR;
-        else                nextstate <= play;
-      end
-      endcase
+    FSM dut1(clk, reset, start, randomize, rst, strt, rnd);
+    flopenr #(64) dut2(clk, rst, strt,set,grid, grid_evolve);
+    datapath dut3(grid_evolve, grid);
+    lfsr64 dut4(clk, rst, grid, grid_evolve);
 endmodule
