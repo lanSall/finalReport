@@ -33,5 +33,6 @@ module flopenr #(parameter WIDTH = 8) (
   always_ff @(posedge clk)
     if (reset)   q <= #1 set;
     else if (en) q <= #1 d;
+    else         q <= #1 set;
 endmodule
 

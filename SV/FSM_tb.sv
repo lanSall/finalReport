@@ -9,6 +9,7 @@ module stimulus ();
     logic  [63:0] grid, next_grid;
 
     FSM dut0(clk, reset, start, randomize, grid, seed);
+    
     flopenr #(64) dut1(clk, reset, start, seed, next_grid, grid);
     datapath dut2(grid, next_grid);
 

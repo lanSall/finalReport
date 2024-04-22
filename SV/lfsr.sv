@@ -29,6 +29,7 @@ module lfsr64 (clk, reset, seed, shift_seed);
 input logic [63:0] seed;
 input logic reset;
 input logic clk;
+
 output logic [63:0] shift_seed;
 
 logic [62:0] temp;
