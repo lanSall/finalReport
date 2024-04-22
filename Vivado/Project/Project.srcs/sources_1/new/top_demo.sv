@@ -53,9 +53,23 @@ module top_demo
   logic [16:0] CURRENT_COUNT;
   logic [16:0] NEXT_COUNT;
   logic        smol_clk;
+  logic clk_en;
+  
+  logic [63:0] muxseed;
+  logic [63:0] d0 = 64'b0000000000000000000000000000000011100000000000000000000000000000; 
+  logic [63:0] d1 = 64'b0000011110001000001100000000000011100000000100001110000000000000;
+  logic [63:0] n2;
+   
+   clk_div dut0(sysclk_125mhz, sw[0], clk_en);
    
   // Place Conway Game of Life instantiation here
- 
+    mux2 #(64) dut1(d0,d1,sw[7],muxseed);
+    main dut2(clk_en,sw[0],sw[1],sw[2],muxseed,n2);
+    /*FSM dut1(sysclk_125mhz, sw[0],sw[1],sw[2],rst,strt,rnd);
+    flopenr #(64) dut3(sysclk_125mhz, grid, grid_evolve);
+    datapath dut4(grid_evolve, datapathout);
+    lfsr64 dut5(sysclk_125mhz,rst, grid_evolve, lfsrout);*/
+    
   // HDMI
   // logic hdmi_out_en;
   //assign hdmi_out_en = 1'b0;
@@ -89,5 +103,7 @@ module top_demo
 
   // Creation of smaller clock signal from counters
   assign smol_clk = CURRENT_COUNT == 17'd100000 ? 1'b1 : 1'b0;
+  
+  
 
 endmodule

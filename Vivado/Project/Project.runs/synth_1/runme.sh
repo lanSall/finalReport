@@ -6,10 +6,14 @@
 # Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 # 
 
+echo "This script was generated under a different operating system."
+echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executing this script"
+exit
+
 if [ -z "$PATH" ]; then
-  PATH=/tools/Xilinx2/Vivado/2020.2/ids_lite/ISE/bin/lin64:/tools/Xilinx2/Vivado/2020.2/bin
+  PATH=C:/Xilinx/Vivado/2020.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2020.2/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2020.2/bin
 else
-  PATH=/tools/Xilinx2/Vivado/2020.2/ids_lite/ISE/bin/lin64:/tools/Xilinx2/Vivado/2020.2/bin:$PATH
+  PATH=C:/Xilinx/Vivado/2020.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2020.2/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2020.2/bin:$PATH
 fi
 export PATH
 
@@ -20,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/rerra/Desktop/projnov10gitupdate/Project_under_construction/Project.runs/synth_1'
+HD_PWD='C:/Users/lansall/Desktop/finalReport/Vivado/Project/Project.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

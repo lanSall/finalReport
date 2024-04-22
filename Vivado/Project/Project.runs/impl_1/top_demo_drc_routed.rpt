@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Fri Nov 11 14:44:24 2022
-| Host         : rerra-Precision-7865-Tower running 64-bit Ubuntu 22.04.1 LTS
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Mon Apr 22 12:55:44 2024
+| Host         : CEAT-ENDV350-11 running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_demo_drc_routed.rpt -pb top_demo_drc_routed.pb -rpx top_demo_drc_routed.rpx
 | Design       : top_demo
 | Device       : xc7z020clg484-1
@@ -24,11 +24,11 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 5
+             Violations found: 6
 +-------------+----------+-------------------------------------------------------------+------------+
 | Rule        | Severity | Description                                                 | Violations |
 +-------------+----------+-------------------------------------------------------------+------------+
-| PDRC-153    | Warning  | Gated clock check                                           | 2          |
+| PDRC-153    | Warning  | Gated clock check                                           | 3          |
 | PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 2          |
 | ZPS7-1      | Warning  | PS7 block required                                          | 1          |
 +-------------+----------+-------------------------------------------------------------+------------+
@@ -37,10 +37,15 @@ Table of Contents
 -----------------
 PDRC-153#1 Warning
 Gated clock check  
-Net smol_clk is a gated clock net sourced by a combinational pin FSM_sequential_CURRENT_STATE[1]_i_3/O, cell FSM_sequential_CURRENT_STATE[1]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net dut2/dut1/FSM_sequential_nextstate_reg[1]_i_2_n_0 is a gated clock net sourced by a combinational pin dut2/dut1/FSM_sequential_nextstate_reg[1]_i_2/O, cell dut2/dut1/FSM_sequential_nextstate_reg[1]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
+Gated clock check  
+Net smol_clk is a gated clock net sourced by a combinational pin FSM_sequential_CURRENT_STATE[1]_i_3/O, cell FSM_sequential_CURRENT_STATE[1]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
 Gated clock check  
 Net test/hdmi_pll/clk_audio is a gated clock net sourced by a combinational pin test/hdmi_pll/audio_sample_word_transfer_control_i_2/O, cell test/hdmi_pll/audio_sample_word_transfer_control_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
