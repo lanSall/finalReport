@@ -51,6 +51,11 @@ module FSM (clk, reset, start, randomize, rst, strt, rnd);
         else if(randomize&&~reset&&~start)      nextstate <= LFSR;
         else                                    nextstate <= play;
       end
+      default: begin
+        rst = 1'b0;
+        strt = 1'b0;
+        rnd = 1'b0;
+      end
       endcase
 endmodule
 

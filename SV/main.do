@@ -27,7 +27,7 @@ if [file exists work] {
 vlib work
 
 # compile source files
-vlog FSM.sv main.sv datapath.sv flopenr.sv main_tb.sv lfsr.sv
+vlog FSM.sv main.sv datapath.sv flopenr.sv main_tb.sv lfsr.sv flop.sv
 
 # start and run simulation
 vsim -voptargs=+acc work.stimulus
@@ -39,14 +39,14 @@ view wave
 # Diplays All Signals recursively
 #add wave -hex -r /stimulus/*
 add wave -noupdate -divider -height 32 "stimulus"
-add wave -hex /stimulus/*
+add wave -binary /stimulus/*
 add wave -hex /stimulus/dut/dut1/state
 add wave -noupdate -divider -height 32 "stimulus"
-add wave -hex /stimulus/dut/*
+add wave -binary /stimulus/dut/*
 add wave -noupdate -divider -height 32 "lfsr"
-add wave -hex /stimulus/dut/dut4/*
+add wave -binary /stimulus/dut/dut4/*
 add wave -noupdate -divider -height 32 "flop"
-add wave -hex /stimulus/dut/dut2/*
+add wave -binary /stimulus/dut/dut2/*
 
 #add wave -hex /stimulus/dut/reset
 #add wave -hex /stimulus/dut/clk

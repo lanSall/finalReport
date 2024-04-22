@@ -6,7 +6,7 @@ module stimulus ();
     logic  randomize;
     logic  [63:0] grid;
 
-    main dut(clk, reset, start, randomize,muxseed, grid);
+    main dut(clk, reset, start, randomize, grid);
 
     integer handle3;
     integer desc3;
@@ -26,10 +26,10 @@ module stimulus ();
 	#1000 $finish;		
      end
 
-   always @ ( negedge clk)
+   always 
      begin
 	desc3 = handle3;
-   $fdisplay(desc3, "rst = %b start = %b randomize = %b\n%b\n%b\n%b\n%b\n%b\n%b\n%b\n%b\n--------", 
+	#10 $fdisplay(desc3, "rst = %b start = %b randomize = %b\n%b\n%b\n%b\n%b\n%b\n%b\n%b\n%b\n--------", 
 		     reset, start, randomize, grid[7:0], grid[15:8], grid[23:16], grid[31:24],grid[39:32], grid[47:40], grid[55:48],grid[63:56],);
      end   
 
