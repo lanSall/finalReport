@@ -6,7 +6,7 @@ module stimulus ();
     logic  randomize;
     logic  [63:0] grid;
 
-    main dut(clk, reset, start, randomize, grid);
+    main dut(clk, reset, start, randomize,muxseed, grid);
 
     integer handle3;
     integer desc3;
@@ -29,8 +29,8 @@ module stimulus ();
    always 
      begin
 	desc3 = handle3;
-	#10 $fdisplay(desc3, "%b\n%b\n%b\n%b\n%b\n%b\n%b\n%b\n--------", 
-		     grid[7:0], grid[15:8], grid[23:16], grid[31:24],grid[39:32], grid[47:40], grid[55:48],grid[63:56],);
+	#10 $fdisplay(desc3, "reset = %b, start = %b, randomize =%b\n%b\n%b\n%b\n%b\n%b\n%b\n%b\n%b\n--------", 
+		     reset, start, randomize,grid[7:0], grid[15:8], grid[23:16], grid[31:24],grid[39:32], grid[47:40], grid[55:48],grid[63:56],);
      end   
 
     initial 
@@ -38,11 +38,9 @@ module stimulus ();
         #0 randomize <= 1'b0;
         #0 start <= 1'b0;
        #0 reset <=1'b1;
-       #20 reset <= 1'b0;
+       #50 reset <= 1'b0;
        #0 randomize <= 1'b1;
-       #100 randomize <= 1'b0;
-       #0 start <= 1'b1;
-       #500 start <= 1'b0;
+       #500 randomize <= 1'b0;
        
 
      end
