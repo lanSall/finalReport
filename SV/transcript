@@ -1,10 +1,16 @@
 # do main.do
+<<<<<<< HEAD
+# Model Technology ModelSim SE-64 vlog 10.7f Compiler 2020.03 Mar 24 2020
+# Start time: 11:36:37 on Apr 22,2024
+# vlog FSM.sv main.sv datapath.sv flopenr.sv main_tb.sv lfsr.sv 
+=======
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is lance@LANCESPC.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is lance@LANCESPC.
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim SE-64 vlog 10.7f Compiler 2020.03 Mar 24 2020
 # Start time: 18:27:17 on Apr 15,2024
 # vlog FSM.sv main.sv datapath.sv flopenr.sv main_tb.sv lfsr.sv flop.sv 
+>>>>>>> 25ba8766cb6a7924990c10a7260b50e17841819d
 # -- Compiling module FSM
 # -- Compiling module main
 # -- Compiling module datapath
@@ -15,6 +21,15 @@
 # -- Compiling module flopenr
 # -- Compiling module stimulus
 # -- Compiling module lfsr64
+<<<<<<< HEAD
+# 
+# Top level modules:
+# 	stimulus
+# End time: 11:36:37 on Apr 22,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 11:36:37 on Apr 22,2024
+=======
 # -- Compiling module flop
 # 
 # Top level modules:
@@ -24,6 +39,7 @@
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.stimulus 
 # Start time: 18:27:17 on Apr 15,2024
+>>>>>>> 25ba8766cb6a7924990c10a7260b50e17841819d
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
 # //  ModelSim SE-64 10.7f Mar 24 2020
@@ -50,12 +66,18 @@
 # Loading work.evolve5(fast)
 # Loading work.evolve8(fast)
 # Loading work.lfsr64(fast)
+<<<<<<< HEAD
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'muxseed'. The port definition is at: main.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut File: main_tb.sv Line: 9
+# .list
+=======
 # .list
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: lance  Hostname: LANCESPC  ProcessID: 24428
 #           Attempting to use alternate WLF file "./wlftiyr8bj".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 #           Using alternate file: ./wlftiyr8bj
+>>>>>>> 25ba8766cb6a7924990c10a7260b50e17841819d
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
@@ -66,5 +88,10 @@
 # configure wave not supported in batch mode
 # ** Note: $finish    : main_tb.sv(26)
 #    Time: 1 us  Iteration: 0  Instance: /stimulus
+<<<<<<< HEAD
+# End time: 11:36:40 on Apr 22,2024, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 1
+=======
 # End time: 18:27:18 on Apr 15,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 2
+>>>>>>> 25ba8766cb6a7924990c10a7260b50e17841819d
