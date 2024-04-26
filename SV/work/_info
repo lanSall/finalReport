@@ -9,10 +9,10 @@ z2
 cModel Technology
 Z0 dC:/Users/lance/OneDrive/VScode/SV/finalReport/finalReport/SV
 T_opt
-Z1 !s110 1714152360
-V70fdbT<YEGOhQHAWJIX>=3
+Z1 !s110 1714160023
+VHNMF;nf22SN>>13RPBCI<1
 04 8 4 work stimulus fast 0
-=1-f0d415fc1697-662be3a8-29c-78c4
+=1-f0d415fc1697-662c0197-2b4-59a8
 o-quiet -auto_acc_if_foreign -work work +acc
 Z2 tCvgOpt 0
 n@_opt
@@ -35,7 +35,7 @@ Z9 OL;L;10.7f;67
 r1
 !s85 0
 31
-Z10 !s108 1714152360.000000
+Z10 !s108 1714160023.000000
 Z11 !s107 flop.sv|lfsr.sv|main_tb.sv|flopenr.sv|datapath.sv|main.sv|FSM.sv|
 Z12 !s90 FSM.sv|main.sv|datapath.sv|flopenr.sv|main_tb.sv|lfsr.sv|flop.sv|
 !i113 0
@@ -165,13 +165,13 @@ vFSM
 R3
 R1
 !i10b 1
-!s100 `]TZ_b;z3Tain_oDS4QMi1
-Ifh2o21T_ZXWfIS>hMeS>R0
+!s100 KQ2Od;1MM4m@34T]TAd:[2
+I]K7a[fJiPN@jen@^1?Fk41
 R4
 !s105 FSM_sv_unit
 S1
 R0
-w1714151725
+w1714159701
 8FSM.sv
 FFSM.sv
 L0 1
@@ -214,13 +214,13 @@ vmain
 R3
 R1
 !i10b 1
-!s100 CPe3292i02:6JC1_hLZ`91
-IPJ26=]LT3CV]]Y>:19NMJ2
+!s100 LKhflC;92@?clOgkH]hT@2
+IC[VE75KkVYn@9EC40P?MF2
 R4
 !s105 main_sv_unit
 S1
 R0
-w1714152255
+w1714159973
 8main.sv
 Fmain.sv
 L0 1
@@ -262,13 +262,13 @@ vstimulus
 R3
 R1
 !i10b 1
-!s100 9Uzl:4bUoDLcSD]ab=g=o0
-IJb_;onF0A91Q==T[GI7^E2
+!s100 XRdBO:jTb;RNF;5KAfV2n2
+IL6=EJ;m8;RN9:;z2^OKgU0
 R4
 !s105 main_tb_sv_unit
 S1
 R0
-w1714152358
+w1714160021
 8main_tb.sv
 Fmain_tb.sv
 L0 2

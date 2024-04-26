@@ -17,7 +17,7 @@ module main(clk, reset, start, randomize, muxseed, grid);
     
     always@(*)
         case({rst,rnd,strt})
-        3'b1XX : grid <= muxseed;
+        3'b100 : grid <= muxseed;
         3'b010 : grid <= lfsrout;
         3'b001 : grid <= datapathout;
         3'b000 : grid <= grid_evolve;

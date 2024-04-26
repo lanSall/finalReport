@@ -1,6 +1,6 @@
 # do main.do
 # Model Technology ModelSim SE-64 vlog 10.7f Compiler 2020.03 Mar 24 2020
-# Start time: 12:26:00 on Apr 26,2024
+# Start time: 14:33:43 on Apr 26,2024
 # vlog FSM.sv main.sv datapath.sv flopenr.sv main_tb.sv lfsr.sv flop.sv 
 # -- Compiling module FSM
 # -- Compiling module main
@@ -17,10 +17,10 @@
 # Top level modules:
 # 	stimulus
 # 	flop
-# End time: 12:26:00 on Apr 26,2024, Elapsed time: 0:00:00
+# End time: 14:33:43 on Apr 26,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 12:26:00 on Apr 26,2024
+# Start time: 14:33:43 on Apr 26,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
 # //  ModelSim SE-64 10.7f Mar 24 2020
@@ -58,5 +58,5 @@
 # configure wave not supported in batch mode
 # ** Note: $finish    : main_tb.sv(27)
 #    Time: 1 us  Iteration: 0  Instance: /stimulus
-# End time: 12:26:01 on Apr 26,2024, Elapsed time: 0:00:01
+# End time: 14:33:44 on Apr 26,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
