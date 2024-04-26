@@ -4,6 +4,7 @@ module stimulus ();
     logic  reset;
     logic  start;
     logic  randomize;
+    logic  [63:0]muxseed;
     logic  [63:0] grid;
 
     main dut(clk, reset, start, randomize,muxseed, grid);
@@ -35,14 +36,22 @@ module stimulus ();
 
     initial 
      begin      
-        #0 randomize <= 1'b0;
-        #0 start <= 1'b0;
-       #0 reset <=1'b1;
-       #20 reset <= 1'b0;
-       #0 randomize <= 1'b1;
-       #100 randomize <= 1'b0;
-       #0 start <= 1'b1;
-       #500 start <= 1'b0;
+        
+      muxseed<=64'b0011000000111010000100000010110010000000111010000011100000011000;
+      #10 randomize <= 1'b0;
+      #0 start     <= 1'b0;
+      #0 reset     <= 1'b1;
+      #20 reset     <= 1'b0;
+      #0 start     <= 1'b1;
+      #100 start     <= 1'b0;
+      #0 randomize <= 1'b1;
+      #50 randomize <=1'b1;
+      #0 randomize <=1'b0;
+      #0 start      <=1'b1;
+      #50 start <=1'b0;
+      #100 randomize <=1'b1;
+      #0 randomize <=1'b0;
+      #0 reset <=1'b1;
        
 
      end

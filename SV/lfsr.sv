@@ -25,23 +25,24 @@ always_ff @(posedge clk)
 
 endmodule*/
 
-module lfsr64 (clk, reset, seed, shift_seed);
+module lfsr64 (clk, reset, ran,seed, shift_seed);
 input logic [63:0] seed;
 input logic reset;
 input logic clk;
+input logic ran;
 
 output logic [63:0] shift_seed;
 
 logic [62:0] temp;
 
 always_ff @(posedge clk)
-    if (reset)  shift_seed <= seed;
-    else 
+    if(ran)
     begin
     temp = shift_seed[62:0];
     shift_seed[63:1] <= temp;
     shift_seed[0]    <= ~(shift_seed[63] ^ shift_seed[62] ^ shift_seed[60] ^ shift_seed[59]); 
     end
+    else shift_seed <= seed;
 //inputs and outputs for the full seed size (64 bits)
 
 //either build a 64 bit version using your smaller implementation above

@@ -40,8 +40,8 @@ view wave
 #add wave -hex -r /stimulus/*
 add wave -noupdate -divider -height 32 "stimulus"
 add wave -binary /stimulus/*
-add wave -hex /stimulus/dut/dut1/state
-add wave -noupdate -divider -height 32 "stimulus"
+#add wave -hex /stimulus/dut/dut1/state
+#add wave -noupdate -divider -height 32 "stimulus"
 add wave -binary /stimulus/dut/*
 add wave -noupdate -divider -height 32 "lfsr"
 add wave -binary /stimulus/dut/dut4/*
