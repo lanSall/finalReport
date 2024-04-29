@@ -1,0 +1,39 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Mon Apr 29 11:56:02 2024
+| Host         : CEAT-ENDV350-12 running 64-bit major release  (build 9200)
+| Command      : report_timing -file route_report_timing_0.rpt -rpx route_report_timing_0.rpx
+| Design       : top_demo
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+----------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack:                    inf
+  Source:                 sw[0]
+                            (input port)
+  Destination:            sseg_cb
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        16.577ns  (logic 5.062ns (30.536%)  route 11.515ns (69.464%))
+  Logic Levels:           3  (IBUF=1 LUT6=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    T6                                                0.000     0.000 r  sw[0] (IN)
+                         net (fo=0)                   0.000     0.000    sw[0]
+    T6                   IBUF (Prop_ibuf_I_O)         1.429     1.429 r  sw_IBUF[0]_inst/O
+                         net (fo=35, routed)          7.220     8.649    driver/sw_IBUF[0]
+    SLICE_X108Y76        LUT6 (Prop_lut6_I2_O)        0.124     8.773 r  driver/sseg_cb_OBUF_inst_i_1/O
+                         net (fo=1, routed)           4.295    13.068    sseg_cb_OBUF
+    H17                  OBUF (Prop_obuf_I_O)         3.509    16.577 r  sseg_cb_OBUF_inst/O
+                         net (fo=0)                   0.000    16.577    sseg_cb
+    H17                                                               r  sseg_cb (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+
