@@ -20,7 +20,8 @@ module main(clk, reset, start, randomize, muxseed, grid);
         3'b100 : grid <= muxseed;
         3'b010 : grid <= lfsrout;
         3'b001 : grid <= datapathout;
-        default: grid <= 64'b0000000000111000000000000000000000000000000000000000000000000000;
+        3'b000 : grid <= grid_evolve;
+        default: grid <= muxseed;
         endcase
         
     //set is a mux for inputing our seeds
@@ -28,5 +29,5 @@ module main(clk, reset, start, randomize, muxseed, grid);
     FSM dut1(clk, reset, start, randomize, rst, strt, rnd);
     flopenr #(64) dut2(clk, grid, grid_evolve);
     datapath dut3(grid_evolve, datapathout);
-    lfsr64 dut4(clk, rst, grid_evolve, lfsrout);
+    lfsr64 dut4(clk, rst, rnd, grid_evolve, lfsrout);
 endmodule
